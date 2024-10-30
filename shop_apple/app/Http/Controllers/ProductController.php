@@ -17,10 +17,10 @@ class ProductController extends Controller
         $photoPaths = [];
         foreach ($product->variants as $variant) {
             $photo = $product->photos->where('VariantID', $variant->VariantID)->first();
-            $photoPaths[$variant->VariantID] = $photo ? asset($photo->photo_path) : asset('default.jpg');
+            $photoPaths[$variant->VariantID] = $photo ? Storage::url($photo->photo_path) : Storage::url('default.jpg');
         }
     
-        $defaultPhotoPath = $photoPaths[$product->variants->first()->VariantID] ?? asset('default.jpg');
+        $defaultPhotoPath = $photoPaths[$product->variants->first()->VariantID] ?? Storage::url('default.jpg');
         
         return view('product.show', compact('product', 'defaultPhotoPath', 'photoPaths'));
     }
