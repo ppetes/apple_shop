@@ -17,7 +17,7 @@ class ProductController extends Controller
         $photoPaths = [];
         foreach ($product->variants as $variant) {
             $photo = $product->photos->where('VariantID', $variant->VariantID)->first();
-            $photoPaths[$variant->VariantID] = $photo ? asset($photo->photo_path) : asset('default.jpg');
+            $photoPaths[$variant->VariantID] = $photo ? asset('storage/' . $photo->photo_path) : asset('default.jpg');
         }
     
         $defaultPhotoPath = $photoPaths[$product->variants->first()->VariantID] ?? asset('default.jpg');
