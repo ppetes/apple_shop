@@ -28,16 +28,20 @@ class IphonepiccolorSeeder extends Seeder
             // You can add additional products and their corresponding variants here
         ];
 
-        // Loop through each product and insert the corresponding photos
+        // Ensure the ProductID values exist in the products table
+        $existingProductIDs = \DB::table('products')->pluck('ProductID')->toArray();
+
         foreach ($product_photos as $productID => $variants) {
-            foreach ($variants as $variantID => $photoPath) {
-                ProductPhoto::create([
-                    'ProductID' => $productID,
-                    'VariantID' => $variantID,
-                    'photo_path' => $photoPath,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]);
+            if (in_array($productID, $existingProductIDs)) {
+                foreach ($variants as $variantID => $photoPath) {
+                    ProductPhoto::create([
+                        'ProductID' => $productID,
+                        'VariantID' => $variantID,
+                        'photo_path' => $photoPath,
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
+                }
             }
         }
     }

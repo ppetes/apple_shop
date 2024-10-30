@@ -9,37 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
-
-    protected $fillable = [
-        'ProductID',
-        'ProductName',
-        'ProductCategoryID',
-        'Photo',
-    ];
-
-    protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-    ];
-
-    public function category()
-    {
-        return $this->belongsTo(ProductCategory::class, 'ProductCategoryID');
-    }
+    protected $primaryKey = 'ProductID';
 
     public function variants()
     {
         return $this->hasMany(ProductVariant::class, 'ProductID');
     }
 
-    public function getPromotions()
+    public function photos()
     {
-        return $this->hasMany(Promotion::class, 'GetX');
-    }
-
-    public function buyPromotions()
-    {
-        return $this->hasMany(Promotion::class, 'BuyX');
+        return $this->hasMany(ProductPhoto::class, 'ProductID');
     }
 }

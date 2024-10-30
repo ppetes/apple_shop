@@ -12,14 +12,14 @@
 
                 <!-- Menu Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" style="gap: 40px; font-family: Courier, monospace;">
-                    <a href="/iphone" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('iPhone') }}</a>
-                    <a href="/ipad" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('iPad') }}</a>
-                    <a href="/airpods" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('AirPods') }}</a>
-                    <a href="/mac" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Mac') }}</a>
-                    <a href="/tv" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('TV') }}</a>
-                    <a href="/watch" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Watch') }}</a>
-                    <a href="/accessories" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Accessories') }}</a>
-                    <a href="/cart" class="flex items-center" style="color: gray; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='gray'">
+                    <a href="product/iphone" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('iPhone') }}</a>
+                    <a href="product/ipad" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('iPad') }}</a>
+                    <a href="product/airpods" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('AirPods') }}</a>
+                    <a href="product/mac" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Mac') }}</a>
+                    <a href="product/tv" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('TV') }}</a>
+                    <a href="product/watch" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Watch') }}</a>
+                    <a href="product/accessories" class="flex items-center" style="font-size: 18px; color: white; text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">{{ __('Accessories') }}</a>
+                    <a href="product/cart" class="flex items-center" style="color: gray; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='gray'">
                         <i class="fa fa-shopping-cart" style="font-size: 24px;"></i>
                     </a>
                     <div>
