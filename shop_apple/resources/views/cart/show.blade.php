@@ -41,7 +41,11 @@
                                     @endphp
                                     <tr class="text-center">
                                         <td class="p-4">{{ $item->product->ProductName }}</td>
+                                        @if($item->variant->Storage == 0)
+                                        <td class="p-4">{{ $item->variant ? $item->variant->Color : 'Default' }}</td>
+                                        @else
                                         <td class="p-4">{{ $item->variant ? $item->variant->Color . ' - ' . $item->variant->Storage . 'GB' : 'Default' }}</td>
+                                        @endif
                                         <td class="p-4">
                                             <form action="{{ route('cart.update', $item->CartID) }}" method="POST" class="inline">
                                                 @csrf

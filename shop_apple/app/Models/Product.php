@@ -11,6 +11,12 @@ class Product extends Model
 
     protected $primaryKey = 'ProductID';
 
+    protected $fillable = [
+        'ProductName',
+        'ProductCategoryID',
+        'Photo',
+    ];
+
     public function variants()
     {
         return $this->hasMany(ProductVariant::class, 'ProductID');
