@@ -73,4 +73,12 @@ class ProductController extends Controller
 
         return view('product.tv', compact('products'));
     }
+    public function showAccessoriesProducts()
+    {
+        // // Retrieve products with category ID 4
+        $products = Product::where('ProductCategoryID', 7)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.accessories', compact('products'));
+    }
 }

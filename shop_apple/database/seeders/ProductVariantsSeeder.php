@@ -180,16 +180,16 @@ class ProductVariantsSeeder extends Seeder
             ['VariantID' => 164, 'ProductID' => 25, 'Storage' => 0, 'Color' => 'Black', 'Price' => 19900, 'StockUnit' => 90],
             // ['VariantID' => 165, 'ProductID' => 25, 'Storage' => 0, 'Color' => 'Green', 'Price' => 19900, 'StockUnit' => 40],
             // ['VariantID' => 166, 'ProductID' => 25, 'Storage' => 0, 'Color' => 'Blue', 'Price' => 19900, 'StockUnit' => 22],
-            ['VariantID' => 167, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'Pink', 'Price' => 19900, 'StockUnit' => 50],
-            ['VariantID' => 168, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'Purple', 'Price' => 19900, 'StockUnit' => 32],
-            ['VariantID' => 169, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'Black', 'Price' => 19900, 'StockUnit' => 15],
-            ['VariantID' => 170, 'ProductID' => 27, 'Storage' => 0, 'Color' => 'Orange', 'Price' => 19900, 'StockUnit' => 5],
-            ['VariantID' => 171, 'ProductID' => 27, 'Storage' => 0, 'Color' => 'Yellow', 'Price' => 19900, 'StockUnit' => 25],
-            ['VariantID' => 172, 'ProductID' => 27, 'Storage' => 0, 'Color' => 'Blue', 'Price' => 19900, 'StockUnit' => 10],
-            ['VariantID' => 173, 'ProductID' => 28, 'Storage' => 0, 'Color' => 'Black', 'Price' => 29900, 'StockUnit' => 0],
-            ['VariantID' => 174, 'ProductID' => 28, 'Storage' => 0, 'Color' => 'White', 'Price' => 29900, 'StockUnit' => 12],
-            ['VariantID' => 175, 'ProductID' => 29, 'Storage' => 0, 'Color' => 'Gray', 'Price' => 34900, 'StockUnit' => 8],
-            ['VariantID' => 176, 'ProductID' => 29, 'Storage' => 0, 'Color' => 'Blue', 'Price' => 34900, 'StockUnit' => 3]
+            ['VariantID' => 167, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'White', 'Price' => 19900, 'StockUnit' => 50],
+            // ['VariantID' => 168, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'Purple', 'Price' => 19900, 'StockUnit' => 32],
+            // ['VariantID' => 169, 'ProductID' => 26, 'Storage' => 0, 'Color' => 'Black', 'Price' => 19900, 'StockUnit' => 15],
+            ['VariantID' => 170, 'ProductID' => 27, 'Storage' => 0, 'Color' => 'White', 'Price' => 19900, 'StockUnit' => 5],
+            ['VariantID' => 171, 'ProductID' => 28, 'Storage' => 0, 'Color' => 'White', 'Price' => 19900, 'StockUnit' => 25],
+            ['VariantID' => 172, 'ProductID' => 29, 'Storage' => 0, 'Color' => 'White', 'Price' => 19900, 'StockUnit' => 10],
+            ['VariantID' => 173, 'ProductID' => 30, 'Storage' => 0, 'Color' => 'White', 'Price' => 29900, 'StockUnit' => 0],
+            ['VariantID' => 174, 'ProductID' => 31, 'Storage' => 0, 'Color' => 'White', 'Price' => 29900, 'StockUnit' => 12],
+            ['VariantID' => 175, 'ProductID' => 32, 'Storage' => 0, 'Color' => 'Black', 'Price' => 34900, 'StockUnit' => 8],
+            ['VariantID' => 176, 'ProductID' => 33, 'Storage' => 0, 'Color' => 'Black', 'Price' => 34900, 'StockUnit' => 3],
         ];
         
         foreach ($product_variants as $entry) {

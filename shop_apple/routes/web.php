@@ -14,6 +14,7 @@ Route::get('/product/airpods', [ProductController::class, 'showAirpodsProducts']
 Route::get('/product/mac', [ProductController::class, 'showMacProducts'])->name('product.mac');
 Route::get('/product/watch', [ProductController::class, 'showWatchProducts'])->name('product.watch');
 Route::get('/product/tv', [ProductController::class, 'showAppleTVProducts'])->name('product.tv');
+Route::get('/product/accessories', [ProductController::class, 'showAccessoriesProducts'])->name('product.accessories');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 

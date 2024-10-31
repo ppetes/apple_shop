@@ -37,12 +37,12 @@ class ProductSeeder extends Seeder
             ['ProductID' => 25, 'ProductName' => 'Apple TV 4K WiFi + Ethernet', 'ProductCategoryID' => 6, 'Photo' => '/image/apple_tv_4k.png'], // Adjusted the path if necessary
             ['ProductID' => 26, 'ProductName' => 'Apple Pencil Pro', 'ProductCategoryID' => 7, 'Photo' => '/image/Pencil_pro.png'],
             ['ProductID' => 27, 'ProductName' => 'Apple Pencil type C', 'ProductCategoryID' => 7, 'Photo' => '/image/Pencil_type_C.png'],
-            ['ProductID' => 28, 'ProductName' => 'Adapter 35W', 'ProductCategoryID' => 8, 'Photo' => '/image/35W_Adapter.png'],
-            ['ProductID' => 29, 'ProductName' => 'Studio Display', 'ProductCategoryID' => 8, 'Photo' => '/image/Studio_Display.png'],
-            ['ProductID' => 30, 'ProductName' => 'Multiport Digital AV', 'ProductCategoryID' => 8, 'Photo' => '/image/Multiport.png'],
-            ['ProductID' => 31, 'ProductName' => 'Adapter 70W', 'ProductCategoryID' => 8, 'Photo' => '/image/70W_Adapter.png'],
-            ['ProductID' => 32, 'ProductName' => 'Thunbolt 4 Pro 1.8m', 'ProductCategoryID' => 8, 'Photo' => '/image/Thunderbolt_1.8m.png'],
-            ['ProductID' => 33, 'ProductName' => 'Thunbolt 4 Pro 3m', 'ProductCategoryID' => 8, 'Photo' => '/image/Thunderbolt_3m.png'],
+            ['ProductID' => 28, 'ProductName' => 'Studio Display', 'ProductCategoryID' => 7, 'Photo' => '/image/Studio_Display.png'],
+            ['ProductID' => 29, 'ProductName' => 'Multiport Digital AV', 'ProductCategoryID' => 7, 'Photo' => '/image/Multiport.png'],
+            ['ProductID' => 30, 'ProductName' => 'Adapter 35W', 'ProductCategoryID' => 7, 'Photo' => '/image/35W_Adapter.png'],
+            ['ProductID' => 31, 'ProductName' => 'Adapter 70W', 'ProductCategoryID' => 7, 'Photo' => '/image/70W_Adapter.png'],
+            ['ProductID' => 32, 'ProductName' => 'Thunbolt 4 Pro 1.8m', 'ProductCategoryID' => 7, 'Photo' => '/image/Thunderbolt_1.8m.png'],
+            ['ProductID' => 33, 'ProductName' => 'Thunbolt 4 Pro 3m', 'ProductCategoryID' => 7, 'Photo' => '/image/Thunderbolt_3m.png']
         ];
 
         foreach ($products as $entry) {
