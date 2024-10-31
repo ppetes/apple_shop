@@ -26,6 +26,18 @@ class IphonepiccolorSeeder extends Seeder
                 10 => '/iphone/16Plus/16pl_black.png',
             ],
             // You can add additional products and their corresponding variants here
+            3 => [
+                11 => '/iphone/16Pro/16p_Titanium_Black.png',
+                12 => '/iphone/16Pro/16p_Titanium_Desert.png',
+                13 => '/iphone/16Pro/16p_Titanium_Natural.png',
+                14 => '/iphone/16Pro/16p_Titanium_Whie.png',
+            ],
+            4 => [
+                16 => '/iphone/16ProMax/16pm_Titanium_Black.png',
+                17 => '/iphone/16ProMax/16pm_Titanium_Desert.png',
+                18 => '/iphone/16ProMax/16pm_Titanium_Natural.png',
+                19 => '/iphone/16ProMax/16pm_Titanium_White.png',
+            ]
         ];
 
         // Ensure the ProductID values exist in the products table

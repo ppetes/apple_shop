@@ -17,13 +17,19 @@
                         <div class="product-photo mx-auto mb-6" style="max-width: 300px;">
                             <img id="product-image" src="{{ $defaultPhotoPath }}" alt="{{ $product->ProductName }}" style="width: 100%;" class="rounded-lg shadow-md">
                         </div>
-
                         <div class="variants flex flex-wrap gap-2 justify-center mb-6">
                             @foreach($product->variants as $variant)
-                                <button class="variant-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-                                        onclick="changePhoto('{{ $variant->VariantID }}')">
-                                    {{ $variant->Color }} - {{ $variant->Storage }}GB
-                                </button>
+                                @if($variant->Storage == 0)
+                                    <button class="variant-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+                                            onclick="changePhoto('{{ $variant->VariantID }}')">
+                                        {{ $variant->Color }}
+                                    </button>
+                                @else
+                                    <button class="variant-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+                                            onclick="changePhoto('{{ $variant->VariantID }}')">
+                                        {{ $variant->Color }} - {{ $variant->Storage }}GB
+                                    </button>
+                                @endif
                             @endforeach
                         </div>
 

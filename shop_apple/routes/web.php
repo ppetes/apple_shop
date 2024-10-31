@@ -9,6 +9,11 @@ use App\Http\Controllers\CartController;
 
 
 Route::get('/product/iphone', [ProductController::class, 'showIphoneProducts'])->name('product.iphone');
+Route::get('/product/ipad', [ProductController::class, 'showIpadProducts'])->name('product.ipad');
+Route::get('/product/airpods', [ProductController::class, 'showAirpodsProducts'])->name('product.airpods');
+Route::get('/product/mac', [ProductController::class, 'showMacProducts'])->name('product.mac');
+Route::get('/product/watch', [ProductController::class, 'showWatchProducts'])->name('product.watch');
+Route::get('/product/tv', [ProductController::class, 'showAppleTVProducts'])->name('product.tv');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 
@@ -22,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
+
 
 
 

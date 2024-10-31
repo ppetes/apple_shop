@@ -33,5 +33,44 @@ class ProductController extends Controller
 
         return view('product.iphone', compact('products'));
     }
-    
+    public function showIpadProducts()
+    {
+        // // Retrieve products with category ID 2
+        $products = Product::where('ProductCategoryID', 2)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.ipad', compact('products'));
+    }
+    public function showAirpodsProducts()
+    {
+        // // Retrieve products with category ID 5
+        $products = Product::where('ProductCategoryID', 5)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.airpods', compact('products'));
+    }
+    public function showMacProducts()
+    {
+        // // Retrieve products with category ID 3
+        $products = Product::where('ProductCategoryID', 3)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.mac', compact('products'));
+    }
+    public function showWatchProducts()
+    {
+        // // Retrieve products with category ID 4
+        $products = Product::where('ProductCategoryID', 4)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.watch', compact('products'));
+    }
+    public function showAppleTVProducts()
+    {
+        // // Retrieve products with category ID 4
+        $products = Product::where('ProductCategoryID', 6)->with(['photos', 'variants'])->get();
+        
+
+        return view('product.tv', compact('products'));
+    }
 }
