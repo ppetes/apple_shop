@@ -37,10 +37,6 @@ class ProductCategorySeeder extends Seeder
             ],
             [
                 'ProductCategoryID' => 7,
-                'CategoryName' => 'Apple Pencil', 
-            ],
-            [
-                'ProductCategoryID' => 8,
                 'CategoryName' => 'Accessories', 
             ],
         ];

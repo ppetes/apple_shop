@@ -18,7 +18,9 @@ class Cart extends Model
         'CustomerID',
         'VariantID',
         'Quantity',
+        'selected',
     ];
+    
 
     public function product()
     {
@@ -34,4 +36,5 @@ class Cart extends Model
     {
         return $this->belongsTo(Customer::class, 'CustomerID');
     }
+
 }

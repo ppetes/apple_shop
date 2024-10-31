@@ -43,9 +43,10 @@
                                         <td class="p-4">{{ $item->product->ProductName }}</td>
                                         <td class="p-4">{{ $item->variant ? $item->variant->Color . ' - ' . $item->variant->Storage . 'GB' : 'Default' }}</td>
                                         <td class="p-4">
-                                            <form action="{{ route('cart.update', $item->CartID) }}" method="POST" class="inline">
+                                            <form action="{{ route('cart.update', $item->CartID) }}" method="POST" class="inline" id="update-form-{{ $item->CartID }}">
                                                 @csrf
-                                                <input type="number" name="Quantity" value="{{ $item->Quantity }}" min="1" class="w-16 text-center">
+                                                <input type="number" name="Quantity" value="{{ $item->Quantity }}" min="1" class="w-16 text-center"
+                                                    onchange="document.getElementById('update-form-{{ $item->CartID }}').submit();">
                                             </form>
                                         </td>
                                         <td class="p-4">฿{{ number_format($itemPrice, 2) }}</td>
@@ -63,6 +64,9 @@
                         </table>
                         <div class="text-right mt-6">
                             <h3 class="text-2xl font-bold">Total: ฿{{ number_format($cartItems->sum(fn($item) => $item->Quantity * ($item->variant ? $item->variant->Price : $item->product->Price)), 2) }}</h3>
+                        </div>
+                        <div class="text-right mt-6">
+                            <button type="button" class="btn btn-primary"> Payment </button>
                         </div>
                     @endif
                 </div>
