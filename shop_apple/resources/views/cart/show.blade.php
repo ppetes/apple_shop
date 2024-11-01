@@ -19,20 +19,6 @@
                             }, 5000);
                         </script>
                     @endif
-<<<<<<< HEAD
-
-=======
-                    @if(session('error'))
-                        <div id="session-message" class="bg-red-500 text-white p-4 rounded mb-4">
-                            {{ session('error') }}
-                        </div>
-                        <script>
-                            setTimeout(function() {
-                                document.getElementById('session-message').style.display = 'none';
-                            }, 5000);
-                        </script>
-                    @endif
->>>>>>> 54313d05bc3c0dbe64481d318a0fda9a5f971faf
                     @if($cartItems->isEmpty())
                         <p class="text-center">Your cart is empty.</p>
                     @else
