@@ -50,9 +50,12 @@
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <div class="w3-center">
+                        <a href="/product/{{ $product->ProductID }}" >
                             <img src="{{ asset('storage/' . $product->Photo) }}" style="width: 400px; display: block; margin: 0 auto;" alt="{{ $product->ProductName }}">
-                            <h3 class="mt-2">{{ $product->ProductName }}</h3>
-                        </div>
+                            <h3 class="mt-2 text-center" style="font-family: 'Poppins', sans-serif; letter-spacing: 2px;">{{ $product->ProductName }}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Price: ฿{{ number_format($product->variants->min('Price'), 2) }}</p>
+                        </a>
+                    </div>
                     </div>
                 </div>
             @endforeach

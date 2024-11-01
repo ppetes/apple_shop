@@ -14,4 +14,11 @@ class DashboardController extends Controller
         $products = Product::all();
         return view('dashboard', compact('products'));
     }
+
+    public function index1()
+    {
+        // Load products with their related category using 'ProductCategoryID' as the foreign key
+        $products = Product::all();
+        return view('welcome', compact('products'));
+    }
 }

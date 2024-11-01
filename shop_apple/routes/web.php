@@ -42,7 +42,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+<<<<<<< HEAD
 Route::get('/history', [HistoryController::class, 'index'])->name('invoices.index');
+=======
+Route::get('/', [DashboardController::class, 'index1'])->name('welcome');
+>>>>>>> 54313d05bc3c0dbe64481d318a0fda9a5f971faf
 
 
 Route::middleware('auth')->group(function () {

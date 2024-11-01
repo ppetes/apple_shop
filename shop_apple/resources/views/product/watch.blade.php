@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight text-center">
+        <h2 class="text-2xl md:text-4xl text-gray-800 dark:text-gray-200 leading-tight text-center" style="font-family: 'Poppins', sans-serif;">
             WATCH
         </h2>
     </x-slot>
@@ -13,14 +13,14 @@
                         @if($products->isEmpty())
                             <p class="text-center font-semibold">No Watch products available.</p>
                         @else
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                                 @foreach($products as $product)
                                     <div class="bg-gray-100 dark:bg-gray-700 p-6 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex flex-col justify-between h-full">
                                         <!-- Product Photo -->
                                         <div class="product-photo mb-4">
                                            <img src="{{ $product->photos->first() ? asset('storage' . $product->Photo) : asset('default.jpg') }}"
                                                  alt="{{ $product->ProductName }}" 
-                                                 class="w-full h-48 object-cover rounded-lg">
+                                                 class="w-full h-64 object-cover rounded-lg">
                                         </div>
                                         
                                         <!-- Product Name -->

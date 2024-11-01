@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="text-2xl md:text-4xl text-gray-800 dark:text-gray-200 leading-tight text-center" style="font-family: 'Poppins', sans-serif;">
             Cart
         </h2>
     </x-slot>
@@ -19,7 +19,20 @@
                             }, 5000);
                         </script>
                     @endif
+<<<<<<< HEAD
 
+=======
+                    @if(session('error'))
+                        <div id="session-message" class="bg-red-500 text-white p-4 rounded mb-4">
+                            {{ session('error') }}
+                        </div>
+                        <script>
+                            setTimeout(function() {
+                                document.getElementById('session-message').style.display = 'none';
+                            }, 5000);
+                        </script>
+                    @endif
+>>>>>>> 54313d05bc3c0dbe64481d318a0fda9a5f971faf
                     @if($cartItems->isEmpty())
                         <p class="text-center">Your cart is empty.</p>
                     @else
