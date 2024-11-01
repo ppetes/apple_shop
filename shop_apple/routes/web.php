@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\summary;
 
 
 Route::get('/product/iphone', [ProductController::class, 'showIphoneProducts'])->name('product.iphone');
@@ -35,15 +35,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/', [DashboardController::class, 'index1'])->name('welcome');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

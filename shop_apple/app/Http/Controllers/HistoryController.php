@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class InvoiceController extends Controller
+class HistoryController extends Controller
 {
     public function show($id)
     {
@@ -23,5 +21,4 @@ class InvoiceController extends Controller
 
         return view('invoice.show', compact('invoice'));
     }
-
 }

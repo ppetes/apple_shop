@@ -38,7 +38,7 @@
                                             {{ $detail->variant ? $detail->variant->Color : 'Default' }}
                                         </td>
                                         <td class="p-4">{{ $detail->Quantity }}</td>
-                                        <td class="p-4">฿{{ number_format($detail->Price, 2) }}</td>
+                                        <td class="p-4">฿{{ number_format($detail->variant->Price, 2) }}</td>
                                         <td class="p-4">฿{{ number_format($subtotal, 2) }}</td>
                                     </tr>
                                 @endforeach

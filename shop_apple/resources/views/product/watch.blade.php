@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-2xl md:text-4xl text-gray-800 dark:text-gray-200 leading-tight text-center" style="font-family: 'Poppins', sans-serif;">
-            WATCH
+            Watch
         </h2>
     </x-slot>
 
