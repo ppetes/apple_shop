@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HistoryController extends Controller
 {
-    public function show($id)
+    public function show()
     {
+        $userId = Auth::id();
+
         // Fetch the invoice for the authenticated user
-        $invoice = Invoice::where('OrderID', $id) // Change 'id' to 'OrderID'
-                          ->where('OrderBy', Auth::id())
-                          ->with('details.product', 'details.variant')
-                          ->first();
+        $invoice = DB::table('invoices as i')
+            ->join('invoice_details as id','i.OrderID','id.OrderID')
+            ->join('product_variants as pr','id.VariantID','pr.VariantID')
+            ->join('products as p','pr.ProductID','p.ProductID')
+            ->where('OrderBy',$userId)    
+            ->get();
 
-        // Check if the invoice exists
-        if (!$invoice) {
-            return redirect()->route('cart.index')->with('error', 'Invoice not found.');
-        }
+        $groupedOrders = $invoice->groupBy('OrderID');
 
-        return view('invoice.show', compact('invoice'));
+        return view('history.show', compact('invoice' ,'groupedOrders'));
     }
 }

@@ -67,10 +67,6 @@
                 <a href="register" class="w3-bar-item" style="text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">Watch</a>
                 <a href="register" class="w3-bar-item" style="text-decoration: none;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'">Accessories</a>
 
-                <a href="register" class="flex items-center w3-center" style="color: gray; text-decoration: none; width: 70px;" onmouseover="this.style.color='white'" onmouseout="this.style.color='gray'">
-                    <i class="fa fa-shopping-cart" style="font-size: 24px;"></i>
-                </a>
-
                 @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/dashboard') }}" 

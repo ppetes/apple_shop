@@ -22,6 +22,10 @@
                     <a href="/cart" class="flex items-center" style="color: gray; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='gray'">
                         <i class="fa fa-shopping-cart" style="font-size: 24px;"></i>
                     </a>
+                    <a href="/history" class="flex items-center" style="color: gray; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='gray'">
+                        <i class="fa fa-history" style="font-size: 24px;"></i>
+
+                    </a>
                     <div>
                 
 

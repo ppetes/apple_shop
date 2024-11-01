@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\summary;
+use App\Http\Controllers\HistoryController;
 
 
 Route::get('/product/iphone', [ProductController::class, 'showIphoneProducts'])->name('product.iphone');
@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/invoice/{id}', [InvoiceController::class, 'show'])->name('invoice.show');
+
+Route::get('/history', [HistoryController::class, 'show'])->name('history.show');
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
 

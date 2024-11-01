@@ -66,18 +66,18 @@
                         </table>
 
                       <div class="text-right mt-6">
-    @php
-        $total = $cartItems->sum(fn($item) => $item->Quantity * ($item->variant ? $item->variant->Price : $item->product->Price));
-        $discountedTotal = $total > 50000 ? $total * 0.95 : $total;
-        $discountAmount = $total > 50000 ? $total * 0.05 : 0; // คำนวณจำนวนเงินที่ลดลง
-    @endphp
+                            @php
+                                $total = $cartItems->sum(fn($item) => $item->Quantity * ($item->variant ? $item->variant->Price : $item->product->Price));
+                                $discountedTotal = $total > 50000 ? $total * 0.95 : $total;
+                                $discountAmount = $total > 50000 ? $total * 0.05 : 0; // คำนวณจำนวนเงินที่ลดลง
+                            @endphp
 
-    <h3 class="text-2xl font-bold">Total: ฿{{ number_format($discountedTotal, 2) }}</h3>
+                            <h3 class="text-2xl font-bold">Total: ฿{{ number_format($discountedTotal, 2) }}</h3>
 
-    @if ($discountAmount > 0)
-        <p class="text-red-500">You saved: ฿{{ number_format($discountAmount, 2) }}</p>
-    @endif
-</div>
+                            @if ($discountAmount > 0)
+                                <p class="text-red-500">You saved: ฿{{ number_format($discountAmount, 2) }}</p>
+                            @endif
+                        </div>
                         <!-- Checkout Button -->
                         <form action="{{ route('cart.checkout') }}" method="POST" class="text-right mt-4">
                             @csrf

@@ -116,10 +116,6 @@ class CartController extends Controller
         $itemTotal = $item->Quantity * $price;
     
         // ตรวจสอบว่าราคาสูงกว่า 50,000 หรือไม่ และลด 5% หากเป็นเช่นนั้น
-        if ($itemTotal > 50000) {
-            $itemTotal *= 0.95; // ลด 5%
-        }
-        
         return $itemTotal;
     });
 
@@ -127,7 +123,7 @@ class CartController extends Controller
     $invoice = Invoice::create([
         'OrderBy' => Auth::id(),
         'Date' => now(),
-        'TotalAmount' => $totalAmount,
+        'TotalAmount' => $totalAmount > 50000 ? $totalAmount * 0.95 : $totalAmount,
     ]);
 
     // Debugging: Check if the invoice was created successfully
