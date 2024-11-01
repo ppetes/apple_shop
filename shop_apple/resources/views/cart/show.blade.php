@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="text-2xl md:text-4xl text-gray-800 dark:text-gray-200 leading-tight text-center" style="font-family: 'Poppins', sans-serif;">
             Cart
         </h2>
     </x-slot>
@@ -12,6 +12,16 @@
                     @if(session('success'))
                         <div id="session-message" class="bg-green-500 text-white p-4 rounded mb-4">
                             {{ session('success') }}
+                        </div>
+                        <script>
+                            setTimeout(function() {
+                                document.getElementById('session-message').style.display = 'none';
+                            }, 5000);
+                        </script>
+                    @endif
+                    @if(session('error'))
+                        <div id="session-message" class="bg-red-500 text-white p-4 rounded mb-4">
+                            {{ session('error') }}
                         </div>
                         <script>
                             setTimeout(function() {

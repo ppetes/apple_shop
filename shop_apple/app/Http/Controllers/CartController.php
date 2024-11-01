@@ -79,9 +79,9 @@ class CartController extends Controller
 
         if ($cartItem) {
             $cartItem->delete();
-            return redirect()->route('cart.index')->with('success', 'Item removed from cart!');
+            return redirect()->route('cart.index')->with('error', 'Item removed from cart!');
         }
 
-        return redirect()->route('cart.index')->with('error', 'Item not found.');
+        return redirect()->route('cart.index')->with('success', 'Item not found.');
     }
 }
