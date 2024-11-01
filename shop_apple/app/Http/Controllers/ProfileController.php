@@ -8,9 +8,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Invoice;
 
 class ProfileController extends Controller
 {
+    public function display_invoice() {
+        $userId = Auth::id(); // Get the authenticated user's ID
+    
+        // Fetch all invoices for the authenticated user
+        $invoices = Invoice::where('OrderBy', $userId)->get();
+    
+        // Pass the invoices to the view
+        return view('invoice.display', compact('invoices'));
+    }
+    
     /**
      * Display the user's profile form.
      */

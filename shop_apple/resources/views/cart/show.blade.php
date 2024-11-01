@@ -19,6 +19,7 @@
                             }, 5000);
                         </script>
                     @endif
+
                     @if($cartItems->isEmpty())
                         <p class="text-center">Your cart is empty.</p>
                     @else
@@ -41,11 +42,9 @@
                                     @endphp
                                     <tr class="text-center">
                                         <td class="p-4">{{ $item->product->ProductName }}</td>
-                                        @if($item->variant->Storage == 0)
-                                        <td class="p-4">{{ $item->variant ? $item->variant->Color : 'Default' }}</td>
-                                        @else
-                                        <td class="p-4">{{ $item->variant ? $item->variant->Color . ' - ' . $item->variant->Storage . 'GB' : 'Default' }}</td>
-                                        @endif
+                                        <td class="p-4">
+                                            {{ $item->variant ? $item->variant->Color . ($item->variant->Storage ? ' - ' . $item->variant->Storage . 'GB' : '') : 'Default' }}
+                                        </td>
                                         <td class="p-4">
                                             <form action="{{ route('cart.update', $item->CartID) }}" method="POST" class="inline" id="update-form-{{ $item->CartID }}">
                                                 @csrf
@@ -66,12 +65,27 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="text-right mt-6">
-                            <h3 class="text-2xl font-bold">Total: ฿{{ number_format($cartItems->sum(fn($item) => $item->Quantity * ($item->variant ? $item->variant->Price : $item->product->Price)), 2) }}</h3>
-                        </div>
-                        <div class="text-right mt-6">
-                            <button type="button" class="btn btn-primary"> Payment </button>
-                        </div>
+
+                      <div class="text-right mt-6">
+    @php
+        $total = $cartItems->sum(fn($item) => $item->Quantity * ($item->variant ? $item->variant->Price : $item->product->Price));
+        $discountedTotal = $total > 50000 ? $total * 0.95 : $total;
+        $discountAmount = $total > 50000 ? $total * 0.05 : 0; // คำนวณจำนวนเงินที่ลดลง
+    @endphp
+
+    <h3 class="text-2xl font-bold">Total: ฿{{ number_format($discountedTotal, 2) }}</h3>
+
+    @if ($discountAmount > 0)
+        <p class="text-red-500">You saved: ฿{{ number_format($discountAmount, 2) }}</p>
+    @endif
+</div>
+                        <!-- Checkout Button -->
+                        <form action="{{ route('cart.checkout') }}" method="POST" class="text-right mt-4">
+                            @csrf
+                            <button type="submit" class="bg-black hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-lg transition duration-200">
+                                Check Out
+                            </button>
+                        </form>
                     @endif
                 </div>
             </div>

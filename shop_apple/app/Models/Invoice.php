@@ -12,7 +12,6 @@ class Invoice extends Model
     protected $table = 'invoices';
 
     protected $fillable = [
-        'OrderID',
         'Date',
         'TotalAmount',
         'OrderBy',
@@ -32,6 +31,6 @@ class Invoice extends Model
 
     public function details()
     {
-        return $this->hasMany(InvoiceDetail::class, 'OrderID');
+        return $this->hasMany(InvoiceDetail::class, 'OrderID','OrderID');
     }
 }

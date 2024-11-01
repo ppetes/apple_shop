@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\HistoryController;
 
 
 Route::get('/product/iphone', [ProductController::class, 'showIphoneProducts'])->name('product.iphone');
@@ -17,22 +18,18 @@ Route::get('/product/tv', [ProductController::class, 'showAppleTVProducts'])->na
 Route::get('/product/accessories', [ProductController::class, 'showAccessoriesProducts'])->name('product.accessories');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::get('/cart/show', [CartController::class, 'show'])->name('cart.show'); // Show cart contents for authenticated user
     Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
     Route::post('/cart/update/{cartId}', [CartController::class, 'update'])->name('cart.update');
     Route::delete('/cart/remove/{cartId}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout'); // Checkout route
 });
 
-
+Route::get('/invoice/{id}', [InvoiceController::class, 'show'])->name('invoice.show');
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
-
-
-
-
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,6 +42,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/history', [HistoryController::class, 'index'])->name('invoices.index');
 
 
 Route::middleware('auth')->group(function () {

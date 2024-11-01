@@ -15,6 +15,7 @@ class InvoiceDetail extends Model
         'OrderID',
         'ProductID',
         'Quantity',
+        'VariantID',
     ];
 
     protected $casts = [
@@ -24,11 +25,15 @@ class InvoiceDetail extends Model
 
     public function invoice()
     {
-        return $this->belongsTo(Invoice::class, 'OrderID');
+        return $this->belongsTo(Invoice::class, 'OrderID','OrderID');
     }
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'ProductID');
+        return $this->belongsTo(Product::class, 'ProductID','ProductID');
     }
+    public function variant()
+{
+    return $this->belongsTo(ProductVariant::class, 'VariantID', 'VariantID'); // Adjust if necessary
+}
 }
